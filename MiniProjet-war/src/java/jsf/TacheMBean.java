@@ -7,7 +7,9 @@ import gestionnaires.GestionnaireTaches;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.Clock;
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -25,13 +27,36 @@ public class TacheMBean implements Serializable {
 
     @EJB
     private GestionnaireTaches gt;
+    
+    private String etat;
+    private List<String> etats;
 
     public TacheMBean() {
     }
+    
+    @PostConstruct
+    public void init() {
+        etats  = new ArrayList<String>();
+        etats.add("En cours");
+        etats.add("Non attribue");
+        etats.add("complete");
+    }
 
+    public List<String> getEtats() {
+        return etats;
+    }
+    
+    public String getEtat() {
+        return etat;
+    }
+    
     public void creerDonnesDeTest() {
         System.out.print("JSF BEAN CREATION DE TEST taches");
         gt.creerTachesDeTest();
+    }
+    
+    public String add() {
+        return "AddTache?faces-redirect=true";
     }
 
     public List<Tache> getTaches() {

@@ -32,7 +32,7 @@
                             <p:menuitem value="Personne de Test" action="#{personneMBean.creerDonnesDeTest()}" icon="ui-icon-arrowrefresh-1-w"  />
                         </p:submenu>
                         <p:submenu label="Gestion des Taches">
-                            <p:menuitem value="Ajouter" action="#{personneMBean.delete}"  ajax="false" icon="ui-icon-close"/>
+                            <p:menuitem value="Ajouter" action="#{tacheMBean.add()}"  ajax="false" icon="ui-icon-close"/>
                             <p:menuitem value="Modifier" action="#{tacheMBean.modifTaches()}"  ajax="false" icon="ui-icon-close"/>
                             <p:menuitem value="Liste des Taches" action="#{tacheMBean.save()}" icon="ui-icon-arrowrefresh-1-w" />
                             <p:menuitem value="Tach de Test" action="#{tacheMBean.creerDonnesDeTest()}" icon="ui-icon-arrowrefresh-1-w"  />

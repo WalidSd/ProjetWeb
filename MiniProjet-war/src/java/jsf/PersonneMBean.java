@@ -33,15 +33,15 @@ public class PersonneMBean implements Serializable{
         return gt.getPersonne(id);
     }
     
-    public String save() {
-        addMessage("Success", "Data saved");
-        return "listePersonnes?faces-redirect=true";
+    public void save() {
+       addMessage("Success", "Data saved");
+        //return "AddPersonne?faces-redirect=true";
     }
      
     public void update() {
         addMessage("Success", "Data updated");
     }
-     
+    
     public void delete() {
         addMessage("Success", "Data deleted");
     }
